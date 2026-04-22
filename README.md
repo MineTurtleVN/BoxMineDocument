@@ -27,9 +27,15 @@
 - [Auto Farm](reward/auto-farm.md)
 - [Booster](reward/booster-system.md)
 
+### 💰 Economy
+
+- [Hệ Thống Coin (Đổi Coin)](economy/coin-system.md)
+
 ### ⚔️ Combat
 
 - [Mob Points](combat/mob-points.md)
+- [Kill Effects](combat/kill-effects.md)
+- [Skills & Items](combat/skills-items.md)
 - [PvP Manager](combat/pvp-manager.md)
 
 ### 👥 Social
