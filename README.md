@@ -29,6 +29,7 @@
 
 ### 💰 Economy
 
+- [Economy Overview](economy/economy-overview.md)
 - [Hệ Thống Coin (Đổi Coin)](economy/coin-system.md)
 
 ### ⚔️ Combat
@@ -44,6 +45,7 @@
 
 ### 🖥️ UI & Display
 
+- [GUI Menus](ui/gui-menus.md)
 - [ActionBar & HUD](ui/actionbar-hud.md)
 - [Hologram](ui/hologram-system.md)
 
