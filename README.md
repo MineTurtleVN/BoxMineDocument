@@ -14,6 +14,7 @@
 - [Hệ Thống Mine](gameplay/mine-system.md)
 - [Boss Ore](gameplay/boss-ore.md)
 - [Hệ Thống Currency](gameplay/currency-formula.md)
+- [Hệ Thống Rank](gameplay/rank-system.md)
 
 ### 🔧 Enhancement
 
@@ -31,6 +32,7 @@
 
 - [Economy Overview](economy/economy-overview.md)
 - [Hệ Thống Coin (Đổi Coin)](economy/coin-system.md)
+- [Hệ Thống Shop](economy/shop-system.md)
 
 ### ⚔️ Combat
 
@@ -38,6 +40,7 @@
 - [Kill Effects](combat/kill-effects.md)
 - [Skills & Items](combat/skills-items.md)
 - [PvP Manager](combat/pvp-manager.md)
+- [Hệ Thống Dungeon](combat/dungeon-system.md)
 
 ### 👥 Social
 
@@ -47,7 +50,7 @@
 
 - [GUI Menus](ui/gui-menus.md)
 - [ActionBar & HUD](ui/actionbar-hud.md)
-- [Hologram](ui/hologram-system.md)
+- [Hologram System](ui/hologram-system.md)
 
 ### 🔌 Reference
 

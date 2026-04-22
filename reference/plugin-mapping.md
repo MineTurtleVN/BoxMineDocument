@@ -16,6 +16,8 @@
 | Currency Formula | BoxMine-Core | `📁 /plugins/BoxMine-Core/config.yml` → `formula` |
 | Mob Points | BoxMine-Core | `📁 /plugins/BoxMine-Core/mobs.yml` |
 | Chip Enhancement | BoxMine-Core | `📁 /plugins/BoxMine-Core/chip.yml` |
+| Rank System | LuckPerms + DeluxeMenus | `📁 /plugins/DeluxeMenus/gui_menus/menu_rank.yml` |
+| Dungeon | MythicMobs | `📁 /plugins/MythicMobs/mobs/d1.yml`, `📁 /plugins/MythicMobs/spawners/` |
 
 ## Items & Equipment
 
