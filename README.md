@@ -1,98 +1,90 @@
-# 🐢 Tài Liệu Máy Chủ BoxMine
+# 🐢 Giant BoxMine - Hướng Dẫn Chơi Từ A Đến Z
 
-> Tài liệu gameplay và cấu hình được tổng hợp từ server `boxmine`.
-> Cập nhật gần nhất: 2026-04-22
-
----
-
-## 🌱 Giới Thiệu
-
-BoxMine là máy chủ Minecraft tập trung vào đào mỏ, lên cấp, chuyển sinh, nâng cấp trang bị, dungeon, AFK farming và các hệ thống kinh tế riêng. Tài liệu này được viết để người chơi mới biết nên bắt đầu từ đâu, đồng thời giúp staff tra cứu plugin, config, permission và placeholder nhanh hơn.
-
-## 🧭 Nên Đọc Gì Trước?
-
-Nếu bạn là người chơi mới, hãy đọc theo thứ tự này:
-
-1. [Hệ Thống Level](gameplay/level-system.md) - hiểu cách lên cấp khi đào mine.
-2. [Hệ Thống Mine](gameplay/mine-system.md) - biết khu đào, phần thưởng và EXP mỗi block.
-3. [Hệ Thống Currency](gameplay/currency-formula.md) - hiểu money, blocks, mobs và bonus.
-4. [Hệ Thống Rank](gameplay/rank-system.md) - xem lợi ích khi mua rank bằng Points.
-5. [Hệ Thống Chuyển Sinh](gameplay/rebirth-system.md) - mục tiêu dài hạn và multiplier vĩnh viễn.
-
-## ⚡ Tóm Tắt Hệ Thống Chính
-
-| Nhóm | Nội Dung Chính | Nên Đọc Khi |
-| ---- | -------------- | ----------- |
-| Gameplay | Level, mine, rebirth, boss ore, rank | Muốn hiểu vòng lặp chơi chính |
-| Economy | Money, Points, Blocks, Coin, shop | Muốn biết tiền tệ dùng để làm gì |
-| Reward | Crate, AFK, booster, auto farm | Muốn tối ưu phần thưởng |
-| Combat | Dungeon, mob points, skill item, kill effect | Muốn đánh mob, farm dungeon, PvP |
-| Enhancement | Chip, craft | Muốn nâng cấp trang bị |
-| UI | Menu, actionbar, hologram | Muốn biết các giao diện trong server |
-| Reference | Plugin mapping, placeholder | Dành cho staff/admin hoặc người cần tra cứu kỹ thuật |
+> **Server:** `Giant BoxMine`  
+> **Nguồn:** cấu hình plugin từ Pterodactyl server `boxmine` (`3ec8e1f3`)  
+> **Cập nhật:** 2026-04-28
 
 ---
 
-## 📋 Mục Lục
+## 🎮 Server Này Chơi Như Thế Nào?
 
-### ⛏️ Core Gameplay
+Giant BoxMine là server đào mỏ - nâng cấp - chuyển sinh - dungeon. Vòng lặp chính là: **vào server → đào mine kiếm EXP/Money/Blocks → mua rank/booster/trang bị → farm dungeon/PvE → chuyển sinh để lấy multiplier vĩnh viễn → mở nội dung cao hơn**.
 
-- [Hệ Thống Level](gameplay/level-system.md)
-- [Hệ Thống Chuyển Sinh](gameplay/rebirth-system.md)
-- [Hệ Thống Mine](gameplay/mine-system.md)
-- [Boss Ore](gameplay/boss-ore.md)
-- [Công Thức Currency](gameplay/currency-formula.md)
-- [Hệ Thống Rank](gameplay/rank-system.md)
+## 🧭 Người Mới Vào Làm Gì Trước?
 
-### 🔧 Enhancement
+1. Mở `/menu` để xem hub chính.
+2. Vào khu mine đầu tiên ở `World_I`, bắt đầu đào để lấy EXP, Money và Blocks.
+3. Theo dõi level bằng ActionBar: HP, damage, EXP, Blocks, Mobs.
+4. Khi có Points, mở `/rank` để mua rank đầu tiên.
+5. Khi đủ điều kiện, dùng hệ thống chuyển sinh để lấy multiplier lâu dài.
 
-- [Hệ Thống Chip](enhancement/chip-system.md)
-- [Hệ Thống Craft](enhancement/craft-system.md)
+## 🌱 Early-Game
 
-### 🎁 Phần Thưởng
+| Mục Tiêu | Nên Làm |
+| --- | --- |
+| Lên level | Đào mine `Mine1` / khu Mine I |
+| Có tiền đầu | Farm Money từ mine, AFK, crate Start |
+| Mở tiện ích | Mua rank thấp bằng PlayerPoints |
+| Lấy vật phẩm | Mở crate Start, farm Coin, craft item cơ bản |
 
-- [Hệ Thống Crate](reward/crate-system.md)
-- [AFK Farming](reward/afk-farming.md)
-- [Auto Farm](reward/auto-farm.md)
-- [Booster](reward/booster-system.md)
+## ⚙️ Mid-Game
 
-### 💰 Economy
+| Mục Tiêu | Nên Làm |
+| --- | --- |
+| Tăng tốc farm | Mua booster EXP/Money/Block/Mob |
+| Tăng chỉ số | Gắn chip vào cuốc, vũ khí, giáp |
+| Farm PvE | Vào `/dungeon` hoặc `/hamnguc`, farm Hầm Ngục 1 |
+| Chuyển sinh | Tích level, Blocks, Mobs, Money theo tier |
 
-- [Tổng Quan Economy](economy/economy-overview.md)
-- [Hệ Thống Coin](economy/coin-system.md)
-- [Hệ Thống Shop](economy/shop-system.md)
+## 🏆 Late-Game / End-Game
 
-### ⚔️ Combat
+| Mục Tiêu | Nên Làm |
+| --- | --- |
+| Tối ưu multiplier | Chuyển sinh nhiều lần, kết hợp rank + booster |
+| Farm dungeon | Săn `D1_3` Orc Khổng Lồ và đổi `DUNGEON_ITEM` |
+| Săn item mạnh | Farm MMOItems, voucher, crate, dungeon armor/sword |
+| Cạnh tranh | Tham gia PvP/event nếu server mở map hoặc sự kiện |
 
-- [Mob Points](combat/mob-points.md)
-- [Kill Effects](combat/kill-effects.md)
-- [Skills & Items](combat/skills-items.md)
-- [Hệ Thống Dungeon](combat/dungeon-system.md)
+## 💳 Nạp Thẻ Mua Gì?
 
-### 👥 Social
+| Giai Đoạn | Nên Ưu Tiên | Lý Do |
+| --- | --- | --- |
+| Newbie | Rank đầu, booster x2, key Start/Fishing | Mở tiện ích và tăng tốc farm |
+| Mid-game | Booster Block/Mob, bundle, chip slot/VIP nếu có | Đẩy nhanh điều kiện chuyển sinh |
+| End-game | Rank cao, booster mạnh, crate/key hiếm | Tối ưu farm dungeon và item |
 
-- [Bang Hội](social/guild-system.md)
+> Không nên mua ngẫu nhiên. Nếu mới chơi, ưu tiên thứ tự: **Rank tiện ích → Booster farm → Key/Bundle → item hiếm**.
 
-### 🖥️ UI & Display
+## ⛏️ Farm Ở Đâu?
 
-- [GUI Menus](ui/gui-menus.md)
-- [ActionBar & HUD](ui/actionbar-hud.md)
-- [Hologram System](ui/hologram-system.md)
+| Nhu Cầu | Đi Đâu | Xem Thêm |
+| --- | --- | --- |
+| EXP/Money/Blocks | Mine trong `World_I` | [Gameplay](Gameplay/README.md), [Worlds](Worlds/README.md) |
+| Mob Points | Dungeon / MythicMobs | [PvE](PvE/README.md) |
+| Linh Khí/Xu AFK | AFK Zone ở `World_I` | [Gameplay](Gameplay/afk-progression.md) |
+| Boss Ore | Mine có Boss Ore | [Gameplay](Gameplay/mines-boss-ore.md) |
 
-### 🔌 Reference
+## 🛒 Mua Đồ Ở Đâu?
 
-- [Plugin Mapping](reference/plugin-mapping.md)
-- [PlaceholderAPI](reference/placeholders.md)
+| Loại Mua | Cách Mở | Xem Thêm |
+| --- | --- | --- |
+| Rank | `/rank`, `/shop` | [Donate](Donate/ranks-vip.md), [Gui](Gui/deluxemenus.md) |
+| Booster | `/booster` hoặc menu booster | [Donate](Donate/boosters-keys.md), [Shops](Shops/README.md) |
+| Key/Crate | `/key`, khu crate | [Items](Items/rewards-crates.md) |
+| AFK/Fishing gear | NPC/shop AFK/Fishing | [Shops](Shops/player-shops.md) |
 
----
+## 📚 Mục Lục Chi Tiết
 
-## 📖 Cách Đọc Tài Liệu Này
-
-- Phần đầu mỗi trang ưu tiên giải thích cho người chơi.
-- Phần bảng giữ lại số liệu quan trọng như giá, level, cooldown, reward và permission.
-- Phần `Thông Tin Kỹ Thuật` ở cuối trang dành cho staff/admin.
-- Tên plugin, command, permission, placeholder và đường dẫn config được giữ nguyên để tránh sai khi tra cứu.
+- [Gameplay](Gameplay/README.md) - core loop, level, rank, chuyển sinh, mine, AFK.
+- [PvE](PvE/README.md) - dungeon, MythicMobs, boss, drops.
+- [PvP](PvP/README.md) - PvP maps, rules, settings, events.
+- [Worlds](Worlds/README.md) - các thế giới, warps, portals, regions.
+- [Shops](Shops/README.md) - shop, vị trí, vật phẩm, giá, nên mua gì.
+- [Donate](Donate/README.md) - nạp thẻ, rank/VIP, bundle, booster, key.
+- [Gui](Gui/README.md) - toàn bộ GUI từ DeluxeMenus và menu hệ thống.
+- [Items](Items/README.md) - MMOItems, crate rewards, dungeon drops, consumables.
+- [Plugins](Plugins/README.md) - danh sách plugin, config, commands, permissions, placeholders.
 
 ## 🛠️ Ghi Chú Cho Staff
 
-Tài liệu này không thay thế config gốc. Nếu có khác biệt giữa tài liệu và server đang chạy, config trên server là nguồn chính xác nhất.
+Tài liệu này ưu tiên hướng dẫn người chơi trước, sau đó mới ghi config/plugin ở cuối từng trang. Nếu có khác biệt với server đang chạy, config trên Pterodactyl là nguồn chính xác nhất.
