@@ -25,3 +25,4 @@ Gameplay của Giant BoxMine xoay quanh đào mine, lên level, kiếm currency,
 - [Economy & Currencies](economy-currencies.md)
 - [Crafting & Upgrades](crafting-upgrades.md)
 - [AFK Progression](afk-progression.md)
+- [Chip System](../Items/chip-system.md)

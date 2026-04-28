@@ -6,6 +6,8 @@
 
 Chip là MMOItems type `CHIP`, gắn vào 6 zone: weapon, pickaxe, helmet, chestplate, leggings, boots.
 
+Chi tiết thiết kế chip, danh sách 60 chip và step implement nằm ở [Chip System](../Items/chip-system.md).
+
 | Slot | Yêu Cầu |
 | --- | --- |
 | 1 | Free |
