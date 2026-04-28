@@ -1,110 +1,113 @@
 # 🤖 Auto Farm System
 
 > **Plugin:** TurtleAutoFarm
-> **Config:** `📁 /plugins/TurtleAutoFarm/config.yml`
+> **Config:** `/plugins/TurtleAutoFarm/config.yml`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Tổng Quan
+## ⚡ Tóm Tắt Nhanh
 
-- 3 chế độ chính: **AutoFarm** (đánh mob), **AutoMine** (đào ore), **TriggerBot** (tự đánh khi nhìn)
-- 4 module phụ: Auto Fix, Auto Skill, Auto Dungeon, Auto Heal
-- Permission: `turtleautofarm.use`, `turtleautofarm.time.<phút>`
+Auto Farm giúp người chơi từ dong thuc hien một số hanh dong lap lai như đánh mob, dao ore, danh khi nhin thay mục tiêu, từ sửa đồ, từ dung skill, từ heal và từ an. Hệ thống này có gioi han bạng permission và thời gian su dùng.
 
----
+## Dieu Kien Su Dung
 
-## Chế Độ Chính
+| Mục | Giá Trị |
+| --- | ------- |
+| Permission cơ bản | `turtleautofarm.use` |
+| Gioi han thời gian | `turtleautofarm.time.<phut>` |
+| Không gioi han | `turtleautofarm.time.inf` |
 
-### AutoFarm (Đánh Mob)
+## ⚙️ Chế Độ Chính
+
+### AutoFarm
+
+Tu dong tim và đánh mob trong bán kính cho phep.
 
 | Setting | Giá Trị |
-|---------|---------|
-| Scan radius | 64 blocks |
+| ------- | ------- |
+| Scần radius | 64 blocks |
 | Attack range | 3.5 blocks |
 | Safe distance | 3.0 blocks |
-| Max nearby mobs | 1 (lùi ra nếu nhiều hơn) |
+| Max nearby mobs | 1, neu nhiều hon se lui ra |
 
-### AutoMine (Đào Ore)
+### AutoMine
+
+Tu dong tim và dao ore trong bán kính gan.
 
 | Setting | Giá Trị |
-|---------|---------|
-| Scan radius | 16 blocks |
+| ------- | ------- |
+| Scần radius | 16 blocks |
 | Mine range | 4.5 blocks |
-| Target ores | Diamond, Iron, Gold, Coal, Lapis, Redstone, Emerald, Copper (+ Deepslate) |
+| Ore mục tiêu | Diamond, Iron, Gold, Coal, Lapis, Redstone, Emerald, Copper và bản Deepslate |
 
 ### TriggerBot
 
+Tu dong danh khi người chơi nhin vao mục tiêu hop le.
+
 | Setting | Giá Trị |
-|---------|---------|
-| Cone angle | 90° |
+| ------- | ------- |
+| Cone angle | 90 độ |
 | Range | 5 blocks |
 | Attack range | 4 blocks |
 
----
+## 🧰 Module Phụ
 
-## Modules
+| Module | Tác Dụng | Thong So Chinh |
+| ------ | -------- | -------------- |
+| Auto Fix | Tu sua trang bị | Khi đủrability <=20%, gia 1,000$/lan, check mới 60s |
+| Auto Skill | Tu dung skill khi có mob gan | Check mới 20 ticks |
+| Auto Dungeon | Tu vao lai dungeon sau khi chet | Delay 100 ticks, chay `spawn {player}` |
+| Auto Heal | Tu an Golden Apple khi HP thap | HP <50%, cooldown 60 ticks |
+| Auto Eat | Tu an khi doi | Food <=6, cooldown 40 ticks |
 
-### Auto Fix
+## 🎯 Target Và Giới Hạn
 
-- Tự sửa trang bị khi ≤20% durability
-- Giá: 1,000$/lần, kiểm tra mỗi 60s
+| Loại | Danh Sach |
+| ---- | --------- |
+| Mob có thể danh | Zombie, Skeleton, Spider, Creeper, Witch, Enderman, Piglin |
+| Block cần tranh | Lava, Fire, Magma Block, Cactus, Sweet Berry Bush |
+| World cam | `world_dungeon`, `world_event` |
 
-### Auto Skill
+## 💡 Mẹo Chơi
 
-- Tự dùng skill khi có mob gần
-- Kiểm tra mỗi 20 ticks (1s)
+- Kiểm tra thời gian con lai nếu bạn khong có `time.inf`.
+- Auto Fix cần money, nên dung khi so du on dinh.
+- Không nên bat module khong cần thiet neu đang farm mục tiêu cu the.
 
-### Auto Dungeon
+## ❓ Câu Hỏi Thường Gặp
 
-- Tự vào lại dungeon sau khi chết
-- Rejoin delay: 100 ticks (5s)
-- Lệnh: `spawn {player}`
+### Auto Farm có dung được mới world không?
 
-### Auto Heal
+Không. Config có blacklist world như `world_dungeon` và `world_event`.
 
-- Tự ăn Golden Apple khi HP <50%
-- Cooldown: 60 ticks (3s)
-- Ưu tiên Enchanted Golden Apple
+### Auto Heal ưu tiên item nao?
 
-### Auto Eat
+Auto Heal ưu tiên Enchanted Golden Apple.
 
-- Tự ăn khi food level ≤6
-- Items: Steak, Golden Carrot, Auto Meal (MMOItems)
-- Cooldown: 40 ticks (2s)
+### Auto Fix có mien phi không?
 
----
+Không. Config hiện tại ghi gia 1,000$ mới lan sua.
 
-## Target & Blacklist
+## 🔗 Liên Kết Liên Quan
 
-**Mobs đánh:** Zombie, Skeleton, Spider, Creeper, Witch, Enderman, Piglin
+- [Mob Points](../combat/mob-points.md)
+- [AFK Farming](afk-farming.md)
+- [Hệ Thống Dungeon](../combat/dungeon-system.md)
 
-**Blocks tránh:** Lava, Fire, Magma Block, Cactus, Sweet Berry Bush
+## 🛠️ Thông Tin Kỹ Thuật
 
-**Worlds cấm:** `world_dungeon`, `world_event`
-
-### Config Reference
-
-> `📁 /plugins/TurtleAutoFarm/config.yml`
+Cau hinh tại `/plugins/TurtleAutoFarm/config.yml`.
 
 ```yaml
 autofarm-enabled: true
-scan-radius: 64
+scần-radius: 64
 attack-range: 3.5
-automine:
   enabled: true
-  scan-radius: 16
+  scần-radius: 16
 modules:
   auto-fix:
     enabled: true
     cost: 1000
     threshold: 20
 ```
-
----
-
-## Ghi Chú
-
-> Time limit qua permission: `turtleautofarm.time.60` = 60 phút/ngày
-> `turtleautofarm.time.inf` = không giới hạn
-> Xem thêm: [Mob Points](../combat/mob-points.md) | [AFK Farming](afk-farming.md)

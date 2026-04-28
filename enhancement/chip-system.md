@@ -1,68 +1,90 @@
-# 🔧 Hệ Thống Chip Enhancement
+# 🔧 Hệ Thống Chip
 
 > **Plugin:** BoxMine-Core
-> **Config:** `📁 /plugins/BoxMine-Core/chip.yml`
+> **Config:** `/plugins/BoxMine-Core/chip.yml`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Tổng Quan
+## ⚡ Tóm Tắt Nhanh
 
-- Chip là item MMOItems type `CHIP`
-- Gắn chip vào **6 zone** trang bị để cường hóa
-- Mỗi zone tối đa **6 slot**
-- Slot unlock theo rebirth tier hoặc permission
+Chip la vật phẩm MMOItems dung để cuong hoa trang bị. Người chơi gan chip vao cac zone như vu khi, cuoc, mu giap, ao giap, quan giap và giây để tang sức mạnh hoặc chỉ số farm.
 
----
+## 🧭 Cách Hoat Dong
 
-## Các Zone Cường Hóa
+1. Người chơi có chip item type `CHIP`.
+2. Mo giao dien chip của server.
+3. Chon zone trang bị muốn cuong hoa.
+4. Gan chip vao slot da mở khóa.
+5. Chip ap dung hiểu ung/chỉ số theo cấu hình item.
 
-| Zone | Icon | Mô Tả |
-|------|------|--------|
-| `weapon` | &c⚔ Vũ Khí | Cường hóa vũ khí chính |
-| `pickaxe` | &6⛏ Cuốc | Cường hóa cuốc/công cụ |
-| `helmet` | &b🪖 Mũ Giáp | Cường hóa mũ |
-| `chestplate` | &d⛑ Áo Giáp | Cường hóa áo |
-| `leggings` | &e👖 Quần Giáp | Cường hóa quần |
-| `boots` | &9👢 Giày Giáp | Cường hóa giày |
+## 📚 Các Zone Cuong Hoa
 
----
+| Zone | Ten Hien Thi | Dung Cho |
+| ---- | ------------ | -------- |
+| `weapon` | Vu Khi | Cuong hoa vu khi chính |
+| `pickaxe` | Cuoc | Cuong hoa cuoc/cong cu dao |
+| `helmet` | Mu Giap | Cuong hoa mu |
+| `chestplate` | Ao Giap | Cuong hoa ao |
+| `leggings` | Quan Giap | Cuong hoa quan |
+| `boots` | Giay Giap | Cuong hoa giây |
 
-## Unlock Slot
+## Mở Khóa Slot
 
-| Slot | Loại | Yêu Cầu | GUI Color |
-|------|------|---------|-----------|
-| 1 | Free | Mặc định | 🟢 Xanh |
-| 2 | Rebirth | Chuyển sinh 5 | 🟢 Xanh |
-| 3 | Rebirth | Chuyển sinh 10 | 🔴 Đỏ |
-| 4 | Rebirth | Chuyển sinh 20 | 🔴 Đỏ |
-| 5 | Permission | `bm.chip.slot5` | 🟡 Vàng |
-| 6 | Permission | `bm.chip.slot6` | 🟡 Vàng |
+Moi zone có tối đa 6 slot. Mot so slot mo san, một số slot cần chuyển sinh hoặc permission.
 
----
+| Slot | Loại Mở Khóa | Yêu Cầu | Mau GUI |
+| ---- | ------------ | ------- | ------- |
+| 1 | Free | Mac dinh | Xanh |
+| 2 | Rebirth | Chuyen sinh 5 | Xanh |
+| 3 | Rebirth | Chuyen sinh 10 | Do |
+| 4 | Rebirth | Chuyen sinh 20 | Do |
+| 5 | Permission | `bm.chip.slot5` | Vàng |
+| 6 | Permission | `bm.chip.slot6` | Vàng |
 
-## Âm Thanh
+## Am Thanh Trong GUI
 
-| Hành Động | Sound |
-|-----------|-------|
+| Hanh Dong | Sound |
+| --------- | ----- |
 | Mở menu | `BLOCK_CHEST_OPEN` |
-| Gắn chip | `BLOCK_ANVIL_USE` |
-| Tháo chip | `ENTITY_ITEM_PICKUP` |
-| Unlock slot | `ENTITY_PLAYER_LEVELUP` |
-| Lỗi | `ENTITY_VILLAGER_NO` |
+| Gan chip | `BLOCK_ANVIL_USE` |
+| Thao chip | `ENTITY_ITEM_PICKUP` |
+| Mo khoa slot | `ENTITY_PLAYER_LEVELUP` |
+| Loi | `ENTITY_VILLAGER_NO` |
 
-### Config Reference
+## 💡 Mẹo Chơi
 
-> Để chỉnh chip system:
-> `📁 /plugins/BoxMine-Core/chip.yml`
+- Ưu tiên chip cho cuoc neu mục tiêu la farm mine.
+- Ưu tiên chip cho vu khi neu mục tiêu la dungeon/mobs.
+- Chuyen sinh 5, 10 và 20 rat quan trọng vi mo them slot chip.
+
+## ❓ Câu Hỏi Thường Gặp
+
+### Slot 5 và 6 mo bạng cach nao?
+
+Slot 5 và 6 cần permission `bm.chip.slot5` và `bm.chip.slot6`, có thể đến từ VIP, event hoặc staff.
+
+### Chip có phải enchant không?
+
+Không. Chip la item MMOItems riêng và được gan vao hệ thống chip của BoxMine-Core.
+
+## 🔗 Liên Kết Liên Quan
+
+- [Hệ Thống Chuyển Sinh](../gameplay/rebirth-system.md)
+- [Hệ Thống Craft](craft-system.md)
+- [Công Thức Currency](../gameplay/currency-formula.md)
+
+## 🛠️ Thông Tin Kỹ Thuật
+
+Cau hinh tại `/plugins/BoxMine-Core/chip.yml`.
 
 ```yaml
 mmoitems-type: "CHIP"
 max-slots: 6
 zones:
   weapon:
-    display-name: "&c⚔ Vũ Khí"
-    description: "Cường hóa vũ khí chính"
+    display-name: "&c⚔ Vu Khi"
+    description: "Cuong hoa vu khi chính"
 unlock-costs:
   1:
     type: free
@@ -73,12 +95,3 @@ unlock-costs:
     type: permission
     permission: "bm.chip.slot5"
 ```
-
----
-
-## Ghi Chú
-
-> Chip items tạo trong MMOItems (type: CHIP)
-> Slot 2-4 yêu cầu [Chuyển Sinh](../gameplay/rebirth-system.md)
-> Slot 5-6 yêu cầu permission (thường gắn với VIP rank hoặc event)
-> Xem thêm: [Rebirth System](../gameplay/rebirth-system.md) | [Craft System](craft-system.md)

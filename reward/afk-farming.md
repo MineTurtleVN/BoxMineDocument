@@ -1,81 +1,115 @@
-# 🎣 AFK Farming (Câu Cá AFK)
+# 🎣 AFK Farming
 
 > **Plugin:** TurtleAFK
-> **Config:** `📁 /plugins/TurtleAFK/config.yml`
+> **Config:** `/plugins/TurtleAFK/config.yml`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Tổng Quan
+## ⚡ Tóm Tắt Nhanh
 
-- Người chơi đứng trong **AFK Zone** và câu cá tự động
-- Nhận **Linh Khí** mỗi lần câu, tích lũy qua các **Wave**
-- Đứng yên nhận thưởng qua **Countdown** (mỗi 60s)
-- Có hệ thống **Treasure** với 6 rarity
+AFK Farming là hệ thống câu cá/nhan thường khi dung trong AFK Zone. Người chơi có thể nhan Linh Khí, tiền, Xu AFK, key câu cá và treasure rewards. Day la nguồn phần thưởng tot khi bạn khong truc tiep đào mine.
 
----
+## 🧭 Cách Bat Dau AFK Farming
+
+1. Di đến AFK Zone.
+2. Dung cần cau phù hợp neu muốn auto-fishing.
+3. Dung trong zone để countdown chay.
+4. Cau ca để nhận Linh Khí và có co hoi nhan treasure.
+5. Dat moc wave để nhận key và money.
 
 ## AFK Zone
 
-Đặt bằng `/turtleafk setcenter <id> [radius]`
-
-| Zone | World | Vị Trí | Radius |
-|------|-------|--------|--------|
+| Zone | World | Vị Trí | Ban Kinh |
+| ---- | ----- | ------ | -------- |
 | `afk` | World_I | -41.5, 135, -2539.5 | 64 blocks |
-
----
 
 ## Linh Khí
 
-- Nhận **5 – 150** Linh Khí mỗi lần câu
-- Stat MMOItems `LINH_KHI` trên cần câu = % bonus (VD: 50 → +50%)
-- Placeholder: `%turtleafk_now%`, `%turtleafk_now_formatted%`
+Linh Khí la chỉ số tiến trình chính của AFK Farming.
 
----
+| Mục | Giá Trị |
+| --- | ------- |
+| Linh Khí mới lan cau | 5-150 |
+| Stat tang bonus | `LINH_KHI` trên MMOItems |
+| Cách tinh bonus | `LINH_KHI=50` -> +50% |
+| Placeholder | `%turtleafk_now%`, `%turtleafk_now_formatted%` |
 
-## Wave System
+## Wave Rewards
 
-| Wave | Mục Tiêu | Phần Thưởng |
-|------|---------|------------|
-| 1 | 100,000 | 1x Key Cá + 500$ |
-| 2 | 250,000 | 2x Key Cá + 1,500$ |
-| 3 | 500,000 | 3x Key Cá + 2,500$ |
-| 4 | 1,000,000 | 4x Key Cá + 5,000$ |
-| 5 | 1,500,000 | 5x Key Cá + 5,250$ |
-| 6 | 2,000,000 | 6x Key Cá + 7,000$ |
+| Wave | Mục Tieu Linh Khí | Phan Thuong |
+| ---- | ----------------- | ----------- |
+| 1 | 100,000 | 1x Key Ca + 500$ |
+| 2 | 250,000 | 2x Key Ca + 1,500$ |
+| 3 | 500,000 | 3x Key Ca + 2,500$ |
+| 4 | 1,000,000 | 4x Key Ca + 5,000$ |
+| 5 | 1,500,000 | 5x Key Ca + 5,250$ |
+| 6 | 2,000,000 | 6x Key Ca + 7,000$ |
 
----
+## Countdown Dung Yen
 
-## Countdown (Đứng Yên)
+Khi đủng trong AFK Zone, countdown 60 giây se chay. Hoan thanh countdown nhan:
 
-- Đếm ngược **60 giây** khi đứng trong zone
-- Hoàn thành → nhận: 50$ + 1x Xu AFK (MMOItems: `AFK_1`)
-- VIP giảm thời gian countdown:
+- 50$
+- 1x Xu AFK `AFK_1`
 
-| Permission | Giảm |
-|-----------|------|
-| `turtleafk.vip1` – `vip5` | 5% – 25% |
-| `turtleafk.vip6` – `vip10` | 30% – 50% |
-| `turtleafk.vip11` – `vip16` | 55% – 80% |
+VIP có thể giam thời gian countdown:
 
----
+| Permission | Mục Giam |
+| ---------- | -------- |
+| `turtleafk.vip1` đến `turtleafk.vip5` | 5%-25% |
+| `turtleafk.vip6` đến `turtleafk.vip10` | 30%-50% |
+| `turtleafk.vip11` đến `turtleafk.vip16` | 55%-80% |
 
-## Treasure System
+## 🎁 Hệ Thống Treasure
 
-Chance mặc định: **30%** mỗi lần câu. Stat `FISHING_LUCK` tăng % thêm.
+Ti le cơ bản la 30% mới lan cau. Stat `FISHING_LUCK` có thể tang them ti le.
 
-| Rương | Chance | Phần Thưởng |
-|-------|--------|------------|
-| 💎 Rương Kim Cương | 30% | 5x Xu AFK + 50$ |
-| 💜 Rương Netherite | 15% | 10x Xu AFK + 1 Key + 150$ |
-| 🟡 Rương Thần Thoại | 7.5% | 1x Voucher + 1 Key + 500$ |
-| 🔴 Rương Huyền Thoại | 2.5% | 1x Voucher + 2 Key + 1,000$ |
-| 💟 Rương Bí Ẩn | 0.5% | 1x Xu Thần + 3 Key + 2,000$ |
-| 🪨 Rương Cổ Đại | 0.5% | 1x Voucher + 3 Key + 2,000$ |
+| Treasure | Chance | Phan Thuong |
+| -------- | ------ | ----------- |
+| Ruong Kim Cuong | 30% | 5x Xu AFK + 50$ |
+| Ruong Netherite | 15% | 10x Xu AFK + 1 Key + 150$ |
+| Ruong Than Thoai | 7.5% | 1x Voucher + 1 Key + 500$ |
+| Ruong Huyen Thoai | 2.5% | 1x Voucher + 2 Key + 1,000$ |
+| Ruong Bi An | 0.5% | 1x Xu Than + 3 Key + 2,000$ |
+| Ruong Có Dai | 0.5% | 1x Voucher + 3 Key + 2,000$ |
 
-### Config Reference
+## 🧩 PlaceholderAPI
 
-> `📁 /plugins/TurtleAFK/config.yml` → `waves`, `treasure`, `countdown`
+| Placeholder | Mô Tả |
+| ----------- | ----- |
+| `%turtleafk_wave%` | Wave hiện tại |
+| `%turtleafk_now%` | Linh Khí hiện tại |
+| `%turtleafk_max%` | Mục tieu wave |
+| `%turtleafk_percent%` | Phan tram tiền do |
+| `%turtleafk_progress%` | Thanh tiền do 20 ky từ |
+| `%turtleafk_zone%` | Zone đang dung |
+
+## 💡 Mẹo Chơi
+
+- Dau từ cần cau có stat `LINH_KHI` để tang tiến trình wave.
+- `FISHING_LUCK` giúp tang gia tri của nhung buoi AFK dai.
+- AFK Farming kết hợp crate Fishing để tao vòng lặp phần thưởng on dinh.
+
+## ❓ Câu Hỏi Thường Gặp
+
+### Dung yen có nhan thường không?
+
+Có. Countdown 60 giây cho money và Xu AFK neu dung trong zone.
+
+### Câu cá AFK có từ cast lai không?
+
+Ghi chú config cho thay auto-fishing có re-cast delay 2 giây mới lan.
+
+## 🔗 Liên Kết Liên Quan
+
+- [Hệ Thống Crate](crate-system.md)
+- [Booster](booster-system.md)
+- [Hệ Thống Shop](../economy/shop-system.md)
+
+## 🛠️ Thông Tin Kỹ Thuật
+
+Cau hinh tại `/plugins/TurtleAFK/config.yml`.
 
 ```yaml
 waves:
@@ -86,28 +120,4 @@ waves:
       - "eco give {player} 500"
 treasure:
   base-chance: 30.0
-  treasures:
-    diamond_chest:
-      display-name: "&b&lRương Kim Cương"
-      chance: 30.0
 ```
-
----
-
-## PlaceholderAPI
-
-| Placeholder | Mô Tả |
-|-------------|--------|
-| `%turtleafk_wave%` | Wave hiện tại |
-| `%turtleafk_now%` | Linh Khí hiện tại |
-| `%turtleafk_max%` | Mục tiêu wave |
-| `%turtleafk_percent%` | % tiến độ |
-| `%turtleafk_progress%` | Thanh tiến độ 20 ký tự |
-| `%turtleafk_zone%` | Tên zone đang đứng |
-
----
-
-## Ghi Chú
-
-> Auto-fishing: tự động câu và re-cast (delay 2s/lần)
-> Xem thêm: [Booster](booster-system.md) | [Crate System](crate-system.md)

@@ -1,37 +1,68 @@
 # 💎 Boss Ore
 
 > **Plugin:** BoxMine-Core
-> **Config:** `📁 /plugins/BoxMine-Core/mines/{regionId}.yml` → `boss-ore`
+> **Config:** `/plugins/BoxMine-Core/mines/{regionId}.yml` -> `boss-ore`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Cơ Chế
+## ⚡ Tóm Tắt Nhanh
 
-1. Người chơi đào block trong mine
-2. Khi tổng blocks đào đạt **threshold**, Boss Ore 3x3 xuất hiện
-3. Boss Ore có HP riêng, cần đào nhiều lần để phá
-4. Mỗi nhát đào giới hạn bởi `damage-limit-per-hit`
-5. Hologram hiển thị HP bar trên đầu Boss Ore
+Boss Ore la khối mo đặc biệt xuat hien sau khi người chơi dao du so block yêu cầu trong mine. Boss Ore có HP riêng, cần dao nhiều lan để pha và thường được hiển thị bạng hologram HP.
 
----
+## 🧭 Cách Boss Ore Xuat Hien
 
-## Config Ví Dụ (Mine1)
+1. Người chơi đào block trong mine.
+2. Hệ thống dem tong so block da dao.
+3. Khi dat `threshold`, Boss Ore kich thuoc 3x3 xuat hiện tại vi tri da dat.
+4. Người chơi dao Boss Ore để gay sat thường vao HP của no.
+5. Khi HP ve 0, Boss Ore bi pha và phần thưởng được xu ly theo config/plugin.
 
-| Thuộc Tính | Giá Trị |
-|-----------|---------|
-| Tên | Boss Ore |
-| Threshold | 1,000 blocks đào |
+## Thong So Mau Mine1
+
+| Thuoc Tinh | Giá Trị |
+| ---------- | ------- |
+| Ten | Boss Ore |
+| Nguồng xuat hien | 1,000 block da dao |
 | Material | STONE |
-| Kích thước | 3x3 (skull-size: 3.0) |
+| Kich thuoc | 3x3, `skull-size: 3.0` |
 | HP | 500 |
-| DMG/hit tối đa | 10 |
-| Vị trí spawn | Đặt qua `/boxmine setboss Mine1` |
+| Sat thường tối đa mới lan dao | 10 |
+| Vi tri spawn | Dat bạng `/boxmine setboss Mine1` |
 
-### Config Reference
+## Hologram Va Tien Do
 
-> Để chỉnh Boss Ore cho mine:
-> `📁 /plugins/BoxMine-Core/mines/Mine1.yml` → `boss-ore`
+Boss Ore có hologram hiển thị HP bar. Người chơi có thể nhin thanh HP để biết con cần dao bao nhiều lan nua.
+
+| Placeholder | Mô Tả |
+| ----------- | ----- |
+| `%bm_boss_progress_{world}%` | So block con lai trước khi Boss Ore spawn |
+
+## 💡 Mẹo Chơi
+
+- Dao theo nhom giúp Boss Ore xuat hien nhanh hơn.
+- Khi Boss Ore xuat hien, tap trung pha no truoc để khong bo lo phần thưởng.
+- Nếu sat thường mới hit bi gioi han, tốc độ dao và so người tham gia quan trọng hon sat thường don le.
+
+## ❓ Câu Hỏi Thường Gặp
+
+### 💎 Boss Ore có phải mob không?
+
+Không. Day la khối/quang đặc biệt có HP riêng, khác với boss mob trong dungeon.
+
+### Tai sao dao manh nhung Boss Ore mat HP chậm?
+
+Config có `damage-limit-per-hit`, gioi han sat thường tối đa mới lan dao.
+
+## 🔗 Liên Kết Liên Quan
+
+- [Hệ Thống Mine](mine-system.md)
+- [Hologram System](../ui/hologram-system.md)
+- [Mob Points](../combat/mob-points.md)
+
+## 🛠️ Thông Tin Kỹ Thuật
+
+Cau hinh Boss Ore nam trong file mine:
 
 ```yaml
 boss-ore:
@@ -44,18 +75,3 @@ boss-ore:
   damage-limit-per-hit: 10
   spawn-location: 67,111,4
 ```
-
----
-
-## PlaceholderAPI
-
-| Placeholder | Mô Tả |
-|-------------|--------|
-| `%bm_boss_progress_{world}%` | Số blocks còn lại trước khi Boss Ore spawn |
-
----
-
-## Ghi Chú
-
-> Boss Ore hologram config riêng ở [Hologram System](../ui/hologram-system.md)
-> Xem thêm: [Mine System](mine-system.md) | [Mob Points](../combat/mob-points.md)

@@ -1,79 +1,91 @@
 # 🛒 Hệ Thống Shop
 
 > **Plugin:** DeluxeMenus + EpicCraftCustom + PlayerPoints
-> **Config:** `📁 /plugins/DeluxeMenus/gui_menus/shop_afk.yml`, `📁 /plugins/DeluxeMenus/gui_menus/shop_fishing.yml`
+> **Config:** `/plugins/DeluxeMenus/gui_menus/`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Tổng Quan
+## ⚡ Tóm Tắt Nhanh
 
-BoxMine sử dụng **DeluxeMenus** làm GUI shop chính, kết hợp với **EpicCraftCustom** cho craft recipes và **PlayerPoints** làm tiền tệ.
+Shop la noi người chơi truy cap cac menu mua rank, booster, key, bundle, vật phẩm AFK và trang bị câu cá. Mot so shop mua truc tiep bằng Points, một số shop chi mo menu craft của EpicCraftCustom.
 
-> ⚠️ Lệnh `/shop` redirect tới **menu Rank** (`/rank`)
+## 📚 Các Loại Shop
 
----
+| Shop | Cách Mo | Mục Dich | Tiền Tệ/Hệ Thống |
+| ---- | ------- | -------- | ---------------- |
+| Rank | `/rank`, `/ranks`, `/shop` | Mua rank tài khoản | PlayerPoints |
+| AFK | NPC khu AFK | Craft/mua do AFK | EpicCraftCustom |
+| Câu Cá | `/fishing`, `/fish` | Xem kho bau, doi/craft giap câu cá | EpicCraftCustom |
+| Booster | `/booster` | Mua booster | PlayerPoints |
+| Bundle | `/bundle` | Mua gói combo | PlayerPoints hoặc gói server |
+| Key | `/key` | Mua/xem chia khoa crate | Crate/Points |
 
-## Các Shop
+## Shop Rank
 
-### 1. Shop Rank (`/rank`, `/shop`)
+Shop Rank la menu nâng cấp rank bạng PlayerPoints. Day la mot trong nhung shop quan trọng nhất vi rank tang nhiều chỉ số lâu dài.
 
-GUI mua rank bằng PlayerPoints. Chi tiết đầy đủ tại [Rank System](../gameplay/rank-system.md).
+Xem chi tiet tai [Hệ Thống Rank](../gameplay/rank-system.md).
 
----
+## Shop AFK
 
-### 2. Shop AFK
+Shop AFK khong có lenh mo riêng trong tai lieu hiện tại. Người chơi mo shop thong qua NPC tai khu AFK.
 
-> `📁 /plugins/DeluxeMenus/gui_menus/shop_afk.yml`
+| Slot | Ten Mục | Hanh Dong |
+| ---- | ------- | --------- |
+| 13 | Can Cau | Mo craft `afk_rod` |
+| 19 | Giáp & Công Cụ | Mo craft `afk` |
+| 25 | Vat Pham | Mo craft `afk_item` |
+| 31 | Rank AFK | Mo craft `afk_rank` |
 
-GUI mua đồ cho khu AFK, không có lệnh mở riêng (mở từ NPC trong khu AFK).
+Tat ca muc này mo recipe của EpicCraftCustom, không nhất thiết la mua truc tiep bạng tiền.
 
-| Slot | Tên | Hành động |
-|------|-----|----------|
-| 13 | 🎣 Cần Câu | Mở craft `afk_rod` |
-| 19 | 🛡️ Giáp & Công Cụ | Mở craft `afk` |
-| 25 | 🧪 Vật Phẩm | Mở craft `afk_item` |
-| 31 | 📄 RANK | Mở craft `afk_rank` |
+## Shop Câu Cá
 
-> Tất cả dùng **EpicCraftCustom** (`ecraft open <recipe>`)
+| Slot | Ten Mục | Mô Tả | Hanh Dong |
+| ---- | ------- | ----- | --------- |
+| 20 | Kho Bau | Xem ti le drop kho bau câu cá | Mo `fishing_treasure` |
+| 24 | Trao Doi Giap | Doi/craft giap câu cá | Mo craft `fishing` |
 
----
+## 💡 Mẹo Chơi
 
-### 3. Shop Câu Cá (`/fishing`, `/fish`)
+- Dung `/rank` neu mục tiêu la tang sức mạnh lâu dài.
+- Dung shop AFK khi bạn đang đâu từ vao khu AFK/câu cá.
+- Kiểm tra shop booster truoc cac buoi farm dai.
+- Nếu click shop chi mo craft, hay chuan bi vat lieu truoc.
 
-> `📁 /plugins/DeluxeMenus/gui_menus/shop_fishing.yml`
+## ❓ Câu Hỏi Thường Gặp
 
-| Slot | Tên | Mô Tả | Hành động |
-|------|-----|-------|----------|
-| 20 | 🎁 Kho Báu | Xem tỉ lệ drop kho báu câu cá | Mở `fishing_treasure` |
-| 24 | 💎 Trao Đổi Giáp | Đổi kho báu câu được lấy giáp | Mở craft `fishing` |
+### Tai sao `/shop` lai mo Rank?
 
----
+Config hiện tại redirect `/shop` toi menu Rank.
 
-### 4. Shop Booster (`/booster`)
+### Shop AFK mua bạng tiền hay craft?
 
-GUI mua booster bằng PlayerPoints. Chi tiết tại [Booster System](../reward/booster-system.md).
+Tài liệu cho thay shop AFK mo EpicCraftCustom recipes, nên day la craft/doi vat lieu hon la mua truc tiep.
 
----
+### Shop nao dung PlayerPoints?
 
-### 5. Shop Bundle (`/bundle`)
+Rank, booster, bundle/key có thể dùng PlayerPoints tuy theo config tung menu.
 
-> `📁 /plugins/DeluxeMenus/gui_menus/menu_bundle.yml`
+## 🔗 Liên Kết Liên Quan
 
-Shop mua gói combo (bundle).
+- [Tổng Quan Economy](economy-overview.md)
+- [Hệ Thống Rank](../gameplay/rank-system.md)
+- [Hệ Thống Crate](../reward/crate-system.md)
+- [GUI Menus](../ui/gui-menus.md)
 
----
+## 🛠️ Thông Tin Kỹ Thuật
 
-### 6. Shop Key (`/key`)
+File liên quan:
 
-> `📁 /plugins/DeluxeMenus/gui_menus/menu_key.yml`
+- `/plugins/DeluxeMenus/gui_menus/shop_afk.yml`
+- `/plugins/DeluxeMenus/gui_menus/shop_fishing.yml`
+- `/plugins/DeluxeMenus/gui_menus/menu_bundle.yml`
+- `/plugins/DeluxeMenus/gui_menus/menu_key.yml`
 
-Shop mua chìa khoá cho rương báu.
+EpicCraftCustom action dang:
 
----
-
-## Ghi Chú
-
-> Shop sử dụng **PlayerPoints** (ᴘᴏɪɴᴛs / Xu) làm tiền tệ chính
-> Craft thông qua **EpicCraftCustom** — không phải mua trực tiếp mà craft bằng vật liệu
-> Xem thêm: [Economy Overview](economy-overview.md) | [Rank System](../gameplay/rank-system.md) | [Crate System](../reward/crate-system.md)
+```text
+ecraft open <recipe>
+```

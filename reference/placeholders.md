@@ -1,52 +1,78 @@
-# 📋 PlaceholderAPI Reference
+# 🧩 PlaceholderAPI Reference
 
 > **Plugin:** BoxMine-Core
-> **Config:** `📁 /plugins/BoxMine-Core/config.yml` (header comments)
+> **Config:** `/plugins/BoxMine-Core/config.yml`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Prefix: `%bm_...%`
+## ⚡ Tóm Tắt Nhanh
 
-### Người Chơi
+Trang này tổng hợp placeholder quan trọng của BoxMine-Core và một số hệ thống liên quan. Placeholder được dung trong scoreboard, actionbar, hologram, menu và các plugin ho tro PlaceholderAPI.
+
+## Placeholder Nguoi Choi
 
 | Placeholder | Mô Tả |
-|-------------|--------|
-| `%bm_level%` | Cấp độ hiện tại |
-| `%bm_level_number%` | Cấp độ hiện tại (alias) |
-| `%bm_level_prefix%` | Prefix theo level (VD: `&a5☆`) |
+| ----------- | ----- |
+| `%bm_level%` | Level hiện tại |
+| `%bm_level_number%` | Level hiện tại, alias |
+| `%bm_level_prefix%` | Prefix theo level, ví dụ `&a5☆` |
 | `%bm_exp%` | EXP hiện tại |
-| `%bm_exp_required%` | EXP cần để lên level tiếp |
-| `%bm_rebirth%` | Số lần chuyển sinh |
-| `%bm_blocks%` | Tổng blocks đã đào (raw) |
-| `%bm_blocks_formatted%` | Tổng blocks đã đào (1,234) |
-| `%bm_blocks_short%` | Tổng blocks đã đào (1.2K) |
-| `%bm_mobs%` | Tổng mobs đã hạ (raw) |
-| `%bm_mobs_formatted%` | Tổng mobs đã hạ (1,234) |
-| `%bm_mobs_short%` | Tổng mobs đã hạ (1.2K) |
-| `%bm_level_progress%` | Thanh tiến trình level `[||||||||]` |
-| `%bm_level_progress_percent%` | Phần trăm tiến trình (VD: 75.0) |
+| `%bm_exp_required%` | EXP cần để lên level tiếp theo |
+| `%bm_rebirth%` | So lan chuyển sinh |
+| `%bm_blocks%` | Tong blocks da dao đang raw |
+| `%bm_blocks_formatted%` | Tong blocks da dao có đâu phan cach |
+| `%bm_blocks_short%` | Tong blocks da dao đang rut gon, ví dụ 1.2K |
+| `%bm_mobs%` | Tong mobs da ha đang raw |
+| `%bm_mobs_formatted%` | Tong mobs da ha có đâu phan cach |
+| `%bm_mobs_short%` | Tong mobs da ha đang rut gon |
+| `%bm_level_progress%` | Thanh tiến trình level |
+| `%bm_level_progress_percent%` | Phan tram tiến trình level |
 
-### Boss Ore (Theo World)
-
-| Placeholder | Mô Tả |
-|-------------|--------|
-| `%bm_boss_progress_{world}%` | Blocks còn lại trước Boss Ore spawn |
-
-Ví dụ: `%bm_boss_progress_World_I%`
-
-### Mine (Theo Region)
+## Placeholder Boss Ore
 
 | Placeholder | Mô Tả |
-|-------------|--------|
-| `%bm_mine_broken_{regionId}%` | Blocks đã đào từ lần regen cuối |
-| `%bm_mine_total_{regionId}%` | Tổng blocks solid trong mine |
+| ----------- | ----- |
+| `%bm_boss_progress_{world}%` | So blocks con lai trước khi Boss Ore spawn |
 
-Ví dụ: `%bm_mine_broken_m1%`, `%bm_mine_total_m1%`
+Ví dụ:
 
----
+```text
+%bm_boss_progress_World_I%
+```
 
-## Ghi Chú
+## Placeholder Mine
 
-> Region IDs: `m1`-`m9`, `Mine1`, `Mine2`, `bosstg1`
-> Xem thêm: [Level System](../gameplay/level-system.md) | [Mine System](../gameplay/mine-system.md)
+| Placeholder | Mô Tả |
+| ----------- | ----- |
+| `%bm_mine_broken_{regionId}%` | Blocks da dao trong mine từ lan regen cuoi |
+| `%bm_mine_total_{regionId}%` | Tong blocks solid trong mine |
+
+Ví dụ:
+
+```text
+%bm_mine_broken_m1%
+%bm_mine_total_m1%
+```
+
+## Region ID Thuong Gap
+
+| Region ID | Ghi Chú |
+| --------- | ------- |
+| `m1` đến `m9` | Mine I đến IX |
+| `Mine1` | Khu Mine I theo config riêng |
+| `Mine2` | Mine đang có ten nhung chưa rõ chi tiet |
+| `bosstg1` | Khu Mine BOSS |
+
+## Meo Su Dung
+
+- Dung placeholder short cho scoreboard/actionbar để tiet kiem khong gian.
+- Dung placeholder formatted cho menu/hologram để de doc hon.
+- Khi đủng placeholder theo world/region, ten world và region ID phai khop chính xac.
+
+## 🔗 Liên Kết Liên Quan
+
+- [Hệ Thống Level](../gameplay/level-system.md)
+- [Hệ Thống Mine](../gameplay/mine-system.md)
+- [ActionBar & HUD](../ui/actionbar-hud.md)
+- [Hologram System](../ui/hologram-system.md)

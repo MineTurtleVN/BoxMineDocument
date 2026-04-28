@@ -1,23 +1,37 @@
 # 👑 Hệ Thống Rank
 
-> **Plugin:** LuckPerms (quản lý quyền) + DeluxeMenus (GUI mua rank)
-> **Config:** `📁 /plugins/DeluxeMenus/gui_menus/menu_rank.yml`
+> **Plugin:** LuckPerms + DeluxeMenus
+> **Config:** `/plugins/DeluxeMenus/gui_menus/menu_rank.yml`
 > **Cập nhật:** 2026-04-22
 
 ---
 
-## Tổng Quan
+## ⚡ Tóm Tắt Nhanh
 
-Rank được mua bằng **ᴘᴏɪɴᴛs** (PlayerPoints) thông qua GUI `/rank` hoặc `/shop`. Mỗi rank yêu cầu sở hữu rank trước đó. Khi mua, hệ thống dùng `lp user <player> parent set <rank_group>` để gán quyền.
+Rank là hệ thống nâng cấp tài khoản bằng Points. Khi mua rank cao hơn, người chơi mở khóa them quyền lợi như PlayerVault, slot AuctionHouse, bonus AFK, bonus khai thác, bonus linh hồn và các lenh tiền ich.
 
-**Lệnh mở:** `/rank`, `/ranks`, `/shop`
+## 🧭 Cách Mở Menu Rank
 
----
+- `/rank`
+- `/ranks`
+- `/shop`
 
-## Bảng Rank
+Lưu ý: `/shop` hiện tại redirect ve menu Rank.
 
-| # | Tên Rank | Giá (Points) | Permission | /pv | /ah | AFK ↓ | Khai thác ↑ | Linh hồn ↑ |
-|---|----------|-------------|------------|-----|-----|-------|-------------|------------|
+## 🧭 Cách Mua Rank
+
+1. Mở menu bạng `/rank`.
+2. Chọn rank tiếp theo trong chuoi rank.
+3. Đảm bảo đủ Points và da sở hữu rank trước đó.
+4. Click để mua.
+5. Hệ thống gán group LuckPerms mới cho người chơi.
+
+Rank phải mua từ thấp len cao. Người chơi không thể bỏ qua rank giữa.
+
+## 📊 Bảng Rank
+
+| # | Rank | Giá Points | Permission | /pv | /ah | AFK | Khai thác | Linh hồn |
+| - | ---- | ---------- | ---------- | --- | --- | --- | --------- | -------- |
 | 1 | ᴘᴇʙʙʟᴇ | 20 | `rank.1_pebble` | 1 | 2 | 5% | 100% | 100% |
 | 2 | ᴄʜɪᴘ | 50 | `rank.2_chip` | 3 | 3 | 10% | 200% | 200% |
 | 3 | ᴘɪxᴇʟ | 100 | `rank.3_pixel` | 5 | 5 | 15% | 300% | 300% |
@@ -35,47 +49,68 @@ Rank được mua bằng **ᴘᴏɪɴᴛs** (PlayerPoints) thông qua GUI `/rank
 | 15 | ᴏʙsɪᴅɪᴀɴʙᴏx | 8000 | `rank.15_obsidianbox` | 40 | 40 | 75% | 20000% | 20000% |
 | 16 | ʙᴏxɢᴏᴅ | 9000 | `rank.16_boxgod` | 45 | 45 | 80% | 30000% | 30000% |
 
----
+## 📘 Giải Thích Chỉ Số
 
-## Quyền Lợi Mở Khóa Theo Cấp
+- `/pv`: số PlayerVault có thể dùng.
+- `/ah`: số vật phẩm có thể đăng lên AuctionHouse.
+- `AFK`: bonus liên quan đến phần thưởng AFK.
+- `Khai thác`: bonus khi đào mỏ.
+- `Linh hồn`: bonus liên quan diem mobs/linh hồn.
 
-| Quyền | Rank Mở Khóa |
-|-------|-------------|
-| Ngồi lên đầu người khác | ᴘᴇʙʙʟᴇ (1) |
-| `/sit` | ᴄʜɪᴘ (2) |
-| `/lay` | ᴘɪxᴇʟ (3) |
-| `/spin` | ʙʟᴏᴄᴋ (4) |
-| `/crawl` | ᴄᴜʙᴇ (5) |
-| `/kit` độc quyền | ʙʟᴏᴄᴋ (4) |
-| `/back` | ᴄᴏʀᴇ (6) |
-| `/ec` | ʀᴇᴀᴄᴛᴏʀ (7) |
-| `/heal` | ǫᴜᴀɴᴛᴜᴍ (8) |
-| `/feed` | ɴᴇxᴜs (9) |
-| `/nick` | ᴏᴠᴇʀʟᴏʀᴅ (10) |
-| `/hat` | ɪʀᴏɴʙᴏx (11) |
-| `/ptime` | ɢᴏʟᴅʙᴏx (12) |
-| `/pweather` | ᴅɪᴀᴍᴏɴᴅʙᴏx (13) |
-| `/repair`, `/repair all` | ᴇᴍᴇʀᴀʟᴅʙᴏx (14) |
-| `/fly`, `/tpa` | ᴏʙsɪᴅɪᴀɴʙᴏx (15) |
-| Thông báo khi join server | ʙᴏxɢᴏᴅ (16) |
+## 🎁 Quyền Lợi Mở Khóa Theo Rank
 
----
+| Quyền Lợi | Rank Mở Khóa |
+| --------- | ------------ |
+| Ngói len đâu người khác | ᴘᴇʙʙʟᴇ |
+| `/sit` | ᴄʜɪᴘ |
+| `/lay` | ᴘɪxᴇʟ |
+| `/spin` | ʙʟᴏᴄᴋ |
+| `/crawl` | ᴄᴜʙᴇ |
+| `/kit` độc quyền | ʙʟᴏᴄᴋ |
+| `/back` | ᴄᴏʀᴇ |
+| `/ec` | ʀᴇᴀᴄᴛᴏʀ |
+| `/heal` | ǫᴜᴀɴᴛᴜᴍ |
+| `/feed` | ɴᴇxᴜs |
+| `/nick` | ᴏᴠᴇʀʟᴏʀᴅ |
+| `/hat` | ɪʀᴏɴʙᴏx |
+| `/ptime` | ɢᴏʟᴅʙᴏx |
+| `/pweather` | ᴅɪᴀᴍᴏɴᴅʙᴏx |
+| `/repair`, `/repair all` | ᴇᴍᴇʀᴀʟᴅʙᴏx |
+| `/fly`, `/tpa` | ᴏʙsɪᴅɪᴀɴʙᴏx |
+| Thông báo khi join server | ʙᴏxɢᴏᴅ |
 
-## Cách Hoạt Động
+## 💡 Mẹo Chơi
 
-1. Mở GUI bằng `/rank` hoặc `/shop`
-2. Mỗi rank hiển thị 3 trạng thái:
-   - **Chưa đủ điều kiện** — rank trước chưa sở hữu
-   - **Có thể mua** — đủ điều kiện, click để mua
-   - **Đã sở hữu** — hiển thị ✔
-3. Thanh toán bằng PlayerPoints (`points take`)
-4. Gán quyền qua LuckPerms (`lp user parent set`)
-5. Thông báo broadcast khi mua thành công
+- Ưu tiên rank nếu bạn farm lâu dài vi bonus khai thác và linh hồn rất lớn.
+- Kiểm tra số Points trước khi mua để tránh nhầm rank.
+- Rank cao kết hợp với booster và chuyển sinh sẽ tăng tốc độ farm rõ rệt.
 
----
+## ❓ Câu Hỏi Thường Gặp
 
-## Ghi Chú
+### Có thể mua thẳng rank cao không?
 
-> Rank là hệ thống **tuần tự** — phải mua từ thấp lên cao.
-> Tiền tệ sử dụng: **PlayerPoints** (ᴘᴏɪɴᴛs / Xu)
-> Xem thêm: [Economy Overview](../economy/economy-overview.md) | [GUI Menus](../ui/gui-menus.md)
+Không. Rank là hệ thống tuần tự, phải mua theo thứ tự.
+
+### Rank dùng tiền gì?
+
+Rank dung PlayerPoints, trong game có thể hiển thị la Points, Xu hoặc `ᴘᴏɪɴᴛs`.
+
+### Mua rank xong chưa có quyền thi làm gì?
+
+Thu thoát vào lại server. Nếu vẫn lỗi, liên hệ staff và gửi tên rank da mua.
+
+## 🔗 Liên Kết Liên Quan
+
+- [Tổng Quan Economy](../economy/economy-overview.md)
+- [Hệ Thống Shop](../economy/shop-system.md)
+- [GUI Menus](../ui/gui-menus.md)
+
+## 🛠️ Thông Tin Kỹ Thuật
+
+Khi mua thành công, DeluxeMenus chay command LuckPerms dang:
+
+```text
+lp user <player> parent set <rank_group>
+```
+
+Trạng thái trong GUI gom: chưa đủ điều kiện, có thể mua, da sở hữu.
