@@ -4,7 +4,7 @@
 
 ## Trọng Tâm
 
-Hệ item của Giant BoxMine nên xoay quanh chip: người chơi đào mỏ, gặp Boss Ore, mở chip, gắn chip vào trang bị và nâng cấp dần đến Lv.100.
+Hệ item của Giant BoxMine xoay quanh chip: người chơi đào mỏ, gặp Boss Ore, mở chip box, gắn chip vào trang bị và nâng cấp dần đến Lv.100. Chip hiện do BoxMine-Core tự quản bằng metadata nội bộ với `mmoitems-type: "MATERIAL"`.
 
 ## 📄 Trang Con
 

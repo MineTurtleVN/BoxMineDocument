@@ -4,18 +4,18 @@
 
 ## Chip Enhancement
 
-Chip là MMOItems type `CHIP`, gắn vào 6 zone: weapon, pickaxe, helmet, chestplate, leggings, boots.
+Chip là item `MATERIAL` do BoxMine-Core tự quản bằng metadata nội bộ, không cần MMOItems type `CHIP`. Chip gắn vào 6 zone: weapon, pickaxe, helmet, chestplate, leggings, boots.
 
-Chi tiết thiết kế chip, danh sách 60 chip và step implement nằm ở [Chip System](../Items/chip-system.md).
+Chi tiết hệ thống, danh sách 60 chip, hiệu ứng và chip box nằm ở [Chip System](../Items/chip-system.md).
 
 | Slot | Yêu Cầu |
 | --- | --- |
 | 1 | Free |
-| 2 | Chuyển sinh 5 |
-| 3 | Chuyển sinh 10 |
-| 4 | Chuyển sinh 20 |
-| 5 | `bm.chip.slot5` |
-| 6 | `bm.chip.slot6` |
+| 2 | Free |
+| 3 | 50,000 Money |
+| 4 | 100,000 Money |
+| 5 | `boxmine.chip.slot5` |
+| 6 | `boxmine.chip.slot6` |
 
 ## Crafting
 

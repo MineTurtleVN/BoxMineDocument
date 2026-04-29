@@ -2,7 +2,7 @@
 
 > **Server:** `Giant BoxMine`  
 > **Nguồn:** cấu hình plugin từ Pterodactyl server `boxmine` (`3ec8e1f3`)  
-> **Cập nhật:** 2026-04-28
+> **Cập nhật:** 2026-04-29
 
 ---
 
@@ -49,11 +49,11 @@ Giant BoxMine là server đào mỏ - nâng cấp - chuyển sinh - dungeon. Vò
 
 | Giai Đoạn | Nên Ưu Tiên | Lý Do |
 | --- | --- | --- |
-| Newbie | Rank đầu, booster x2, key Start/Fishing | Mở tiện ích và tăng tốc farm |
-| Mid-game | Booster Block/Mob, bundle, chip slot/VIP nếu có | Đẩy nhanh điều kiện chuyển sinh |
+| Newbie | Rank đầu, booster x2, key Start | Mở tiện ích và tăng tốc farm |
+| Mid-game | Booster Block/Mob, chip slot/VIP nếu có | Đẩy nhanh điều kiện chuyển sinh |
 | End-game | Rank cao, booster mạnh, crate/key hiếm | Tối ưu farm dungeon và item |
 
-> Không nên mua ngẫu nhiên. Nếu mới chơi, ưu tiên thứ tự: **Rank tiện ích → Booster farm → Key/Bundle → item hiếm**.
+> Không nên mua ngẫu nhiên. Nếu mới chơi, ưu tiên thứ tự: **Rank tiện ích → Booster farm → Key → item hiếm**. Menu Bundle hiện đang ở trạng thái cập nhật.
 
 ## ⛏️ Farm Ở Đâu?
 
