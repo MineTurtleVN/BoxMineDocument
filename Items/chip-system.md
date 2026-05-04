@@ -173,6 +173,43 @@ unlock-costs:
 | Đi dungeon/PvE | `huyet_tram`, `diet_vuong`, `ao_anh`, `huyet_an`, `toai_giap`, `cuong_huyet` |
 | Sống sót | `huyen_giap`, `thien_menh`, `tinh_tao`, `an_hon`, `kim_than`, `bat_khuat` |
 
+## 🧪 Combo Chip Dị Biệt
+
+Combo dị biệt dành cho người chơi thích build lạ: trộn chip khác vai trò để nhận hiệu ứng mạnh, nhưng phải chịu điểm yếu hoặc cooldown dài. Đây là ý tưởng thiết kế để có thể đưa vào code/config sau này, chưa phải tính năng đang chạy trên server nếu `chip.yml` chưa có mục `combos`.
+
+| Combo | Chip yêu cầu | Hiệu ứng thêm | Rủi ro / Cooldown |
+| --- | --- | --- | --- |
+| **Khoáng Tặc Say Gió** | `bao_khoang` + `khoang_toc` + `mao_hiem` | Khi đào block có tỉ lệ tạo burst: thêm blocks và money cùng lúc | Bị Slow 2s sau khi proc, cooldown 25s |
+| **Máu Liều Đào Mỏ** | `huyet_tram` + `thien_menh` + `tam_mo` | Khi máu thấp, nhận Absorption và tăng damage boss/mob ngắn hạn | Giảm tốc chạy 5s, cooldown 60s |
+| **Thần Tài Lạc Lối** | `kim_ngan` + `tu_bao` + `san_bau` + `hong_van` | Proc tiền lớn và có tỉ lệ rơi Chip Fragment | Giảm hiệu quả EXTRA_BLOCKS tạm thời 10s, cooldown 45s |
+| **Mắt Thần Mỏ Quỷ** | `thuc_khoang` + `thien_nhan` + `mat_than` | Boss Ore progress tăng mạnh khi proc | Nếu combo hụt proc, nhận Mining Fatigue ngắn, cooldown 40s |
+| **Kẻ Chạy Vào Boss** | `truy_anh` + `bung_no` + `pha_tam_thach` | Đánh boss có tỉ lệ tăng speed và bonus damage | Nhận thêm sát thương trong 4s, cooldown 30s |
+| **Giáp Gai Tự Hủy** | `phan_chan` + `huyen_giap` + `bat_khuat` | Khi thấp máu và bị đánh, phản damage lớn và nhận shield | Sau khi shield hết, giảm phòng thủ 6s, cooldown 90s |
+
+### Gợi Ý Config Sau Này
+
+```yaml
+combos:
+  khoang_tac_say_gio:
+    name: "&6Khoáng Tặc Say Gió"
+    required-chips:
+      - bao_khoang
+      - khoang_toc
+      - mao_hiem
+    trigger: MINE_BLOCK_BREAK
+    chance: 8.0
+    cooldown: 25
+    effects:
+      - type: EXTRA_BLOCKS
+        value: 8
+      - type: EXTRA_MONEY
+        value: 500
+    drawbacks:
+      - type: SLOWNESS
+        duration: 2
+        amplifier: 1
+```
+
 ## 🔊 Âm Thanh
 
 | Hành động | Sound |
